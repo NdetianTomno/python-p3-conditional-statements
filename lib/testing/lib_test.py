@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
 
-from control_flow import admin_login, hows_the_weather, fizzbuzz, calculator
+from control_flow import adminLogin, hows_the_weather, fizzbuzz, calculator
 
 import io
 import sys
 
 class TestAdminLogin:
-    '''admin_login() in control_flow.py'''
+    '''adminLogin() in control_flow.py'''
 
     def test_returns_access_granted_admin12345(self):
         '''returns "Access granted" for username=admin and password=12345'''
-        assert(admin_login("admin","12345") == "Access granted")
+        assert(adminLogin("admin","12345") == "Access granted")
 
     def test_returns_access_granted_ADMIN12345(self):
         '''returns "Access granted" for username=ADMIN and password=12345'''
-        assert(admin_login("ADMIN", "12345") == "Access granted")
+        assert(adminLogin("ADMIN", "12345") == "Access granted")
 
     def test_returns_access_denied_not_admin12345(self):
         '''returns "Access denied" for username!=admin or password!=12345'''
-        assert(admin_login("sudo","12345") == "Access denied")
-        assert(admin_login("admin","sudo") == "Access denied")
-        assert(admin_login("sudo","pls") == "Access denied")
+        assert(adminLogin("sudo","12345") == "Access denied")
+        assert(adminLogin("admin","sudo") == "Access denied")
+        assert(adminLogin("sudo","pls") == "Access denied")
 
 class TestHowsTheWeather:
     '''hows_the_weather() in control_flow.py'''
